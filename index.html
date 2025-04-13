@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>小美的互動網站</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #faedcd;
+      overflow: hidden;
+      font-family: "Arial", sans-serif;
+    }
+
+    #menu {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      display: flex;
+      gap: 10px;
+      z-index: 10;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropbtn {
+      background-color: #87986a;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 40px;
+      right: 0;
+      background-color: white;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 20;
+      border-radius: 8px;
+    }
+
+    .dropdown-content a {
+      color: #333;
+      padding: 10px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    #content-frame {
+      position: absolute;
+      top: 60px;
+      left: 10%;
+      width: 80%;
+      height: 80%;
+      background-color: rgba(255, 255, 255, 0.8);
+      display: none;
+      z-index: 5;
+      padding: 20px;
+      overflow: auto;
+      border-radius: 12px;
+    }
+
+    iframe, img, video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  </style>
+</head>
+<body>
+  <div id="menu">
+    <div class="dropdown">
+      <button class="dropbtn" style="background-color: #718355;">自我介紹</button>
+      <div class="dropdown-content">
+        <a href="#" onclick="showImage('img/吳抒璇.png')">小美的自我介紹</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn" style="background-color: #87986a;">作品集</button>
+      <div class="dropdown-content">
+        <a href="#" onclick="showURL('https://jjsksk.github.io/1.1/')">第一周</a>
+        <a href="#" onclick="showURL('https://jjsksk.github.io/2.2/')">第二周</a>
+        <a href="#" onclick="showURL('https://jjsksk.github.io/202503280/')">第三周</a>
+        <a href="#" onclick="showURL('https://www.et.tku.edu.tw/')">教科網站</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn" style="background-color: #97a97c;">測驗卷</button>
+      <div class="dropdown-content">
+        <a href="#" onclick="showURL('https://jjsksk.github.io/3.3/')">試驗開始</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn" style="background-color: #b5c99a;">教學影片</button>
+      <div class="dropdown-content">
+        <a href="#" onclick="showVideo('video/教學影片.mp4')">教學影片播放</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn" style="background-color: #cfe1b9;" onclick="goHome()">回到首頁</button>
+    </div>
+  </div>
+
+  <div id="content-frame"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.6.0/lib/p5.min.js"></script>
+  <script src="sketch.js"></script>
+</body>
+</html>
